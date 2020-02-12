@@ -7,7 +7,10 @@ import "os"
 type Cmd struct {
 	helpFlag    bool
 	versionFlag bool
+	// classpath选项
 	cpOption    string
+	// jre的路径(用于寻找Java标准库中类)
+	XjreOption string
 	class       string
 	args        []string
 }
@@ -27,6 +30,8 @@ func parseCmd() *Cmd {
 
 	flag.StringVar(&cmd.cpOption, "classpath", "", "classpath")
 	flag.StringVar(&cmd.cpOption, "cp", "", "classpath")
+
+	flag.StringVar(&cmd.XjreOption,"Xjre","","jre的路径")
 
 	// 解析参数
 	flag.Parse()
