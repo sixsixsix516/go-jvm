@@ -69,3 +69,4 @@ func printClassInfo(cf *classfile.ClassFile) {
 		fmt.Printf("   %s\n", m.Name())
 	}
 }
+
